@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function 1: Calculate Factorial
+int calculateFactorial(int n) {
+    if (n < 0) return -1; // Error for negative numbers
+    int result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+// Function 2: Check Prime Number
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i * i <= num; ++i) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    // Display program header
+    cout << "===== Simple Math Utilities =====\n";
+    
+    // Factorial calculation
+    cout << "\n[FUNCTION 1: FACTORIAL CALCULATOR]\n";
+    int num;
+    cout << "Enter a positive integer: ";
+    cin >> num;
+    
+    int fact = calculateFactorial(num);
+    if (fact == -1) {
+        cout << "Error: Negative numbers not allowed!\n";
+    } else {
+        cout << num << "! = " << fact << "\n";
+    }
+
+    // Prime number check
+    cout << "\n[FUNCTION 2: PRIME NUMBER CHECKER]\n";
+    cout << "Enter an integer: ";
+    cin >> num;
+    
+    if (isPrime(num)) {
+        cout << num << " is a PRIME number\n";
+    } else {
+        cout << num << " is NOT a prime number\n";
+    }
+
+    return 0;
+}
